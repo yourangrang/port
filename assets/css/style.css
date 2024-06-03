@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
+
+}
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.header__logo {}
+.header__nav {
+    margin-top: 10px;
+}
+.header__nav li {
+    display: inline;
+}
+.header__nav li a {
+    text-transform: uppercase;
+    color: yellow;
+    padding: 14px;
+    position: relative;
+}
+.header__nav li a::before {
+    content: '';
+    width: calc(100% - 28px);
+    height: 2px;
+    position: absolute;
+    background-color: yellow;
+    left: 14px;
+    bottom: 10px;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+.header__nav li a:hover::before {
+    transform: scale(1);
+}
+.header__nav__mobile {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: 7px;
+}
+.header__nav__mobile span {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: yellow;
+    margin-top: 18px;
+    border-radius: 20%;
+    position: relative;
+}
+.header__nav__mobile span::before {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: yellow;
+    border-radius: 20%;
+    right: 0;
+    top: 10px;
+    position: absolute;
+    transition: width 0.3s;
+}
+
+.header__nav__mobile span::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: yellow;
+    border-radius: 20%;
+    left: 0;
+    bottom: 10px;
+    position: absolute;
+    transition: width 0.3s;
+}
+
+/* intro */
+#intro {}
+
+/* skill */
+#skill {}
+
+/* site */
+#site {}
+
+/* port */
+#port {}
+
+/* contact */
+#contact {}
+
+/* footer */
+#footer {}
+
+@media (max-width: 800px){
+    .header__nav {
+        display: none;
+    }
+    .header__nav.show {
+        display: block;
+    }
+    .header__nav.show ul {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        z-index: 10000;
+        min-width: 150px;
+    }
+    .header__nav.show li  {
+        display: block;
+        text-align: right;
+    }
+    .header__nav.show li a {
+        display: inline-block;
+        padding: 10px;
+    }
+    .header__nav.show + .header__nav__mobile span::before {
+        width: 20px;
+    }
+    .header__nav.show + .header__nav__mobile span::after {
+        width: 20px;
+    }
+    .header__nav__mobile {
+        display: block;
+    }
+}
